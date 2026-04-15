@@ -3,14 +3,17 @@ from src.masks import get_mask_card_number
 
 
 def test_get_mask_card_number() -> None:
+    """Проверяет маскировку номера карты."""
     assert get_mask_card_number(7000792289606361) == "7000 79** **** 6361"
 
 
 def test_get_mask_account() -> None:
+    """Проверяет маскировку номера счета."""
     assert get_mask_account(73654108430135874305) == "**4305"
 
 
 def test_get_mask_card_number_raises_for_non_digits() -> None:
+    """Проверяет ошибку для номера карты с нецифровыми символами."""
     try:
         get_mask_card_number("7000AB2289606361")
     except ValueError:
@@ -20,6 +23,7 @@ def test_get_mask_card_number_raises_for_non_digits() -> None:
 
 
 def test_get_mask_account_raises_for_non_digits() -> None:
+    """Проверяет ошибку для номера счета с нецифровыми символами."""
     try:
         get_mask_account("73654108430135AB4305")
     except ValueError:
