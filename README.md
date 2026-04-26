@@ -16,7 +16,7 @@
 1. Клонируйте репозиторий:
 
 ```bash
-git clone <URL_РЕПОЗИТОРИЯ>
+git clone https://github.com/plnkara/myproject.git
 cd myproject
 ```
 
