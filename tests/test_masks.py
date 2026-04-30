@@ -28,10 +28,10 @@ def test_get_mask_card_number_returns_masked_number(card_number: int | str, expe
         None,
     ],
 )
-def test_get_mask_card_number_raises_for_invalid_data(invalid_card_number: object) -> None:
+def test_get_mask_card_number_raises_for_invalid_data(invalid_card_number: int | str | None) -> None:
     """Проверяет ошибку для некорректного номера карты."""
     with pytest.raises(ValueError):
-        get_mask_card_number(invalid_card_number)
+        get_mask_card_number(str(invalid_card_number) if invalid_card_number is None else invalid_card_number)
 
 
 @pytest.mark.parametrize(
@@ -57,7 +57,7 @@ def test_get_mask_account_returns_masked_number(account_number: int | str, expec
         None,
     ],
 )
-def test_get_mask_account_raises_for_invalid_data(invalid_account_number: object) -> None:
+def test_get_mask_account_raises_for_invalid_data(invalid_account_number: int | str | None) -> None:
     """Проверяет ошибку для некорректного номера счета."""
     with pytest.raises(ValueError):
-        get_mask_account(invalid_account_number)
+        get_mask_account(str(invalid_account_number) if invalid_account_number is None else invalid_account_number)
