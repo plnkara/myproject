@@ -32,6 +32,29 @@ poetry install
 poetry shell
 ```
 
+Для установки тестовых и lint-зависимостей:
+
+```bash
+poetry install --with test,lint
+```
+
+## Тестирование
+
+Запуск всех тестов:
+
+```bash
+poetry run pytest
+```
+
+Запуск тестов с отчётом покрытия:
+
+```bash
+poetry run pytest --cov=src --cov-report=html
+```
+
+HTML-отчёт покрытия сохраняется в папке `htmlcov/`.
+Главная страница отчёта: `htmlcov/index.html`.
+
 ## Пример данных
 
 ```python
